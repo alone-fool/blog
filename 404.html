@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Page couldn't be found.</title>
+		<style type="text/css">
+		@-webkit-keyframes headline_appear_animation{
+			from{
+				opacity: 0;
+			}
+			25% {
+				opacity: 0;
+			}	
+			to 	{
+				opacity: 1;
+			}
+		}
+		@-webkit-keyframes contentappear{
+			from {
+				-webkit-transform: scale(0);
+				opacity: 0;
+			}
+			50% {
+				-webkit-transform:  scale(0.5);
+				opacity: 0;
+			}
+			to {
+				-webkit-transform: scale(1);
+				opacity: 1;
+			}
+		}
+		@-moz-keyframes headline_appear_animation{
+			from{
+				opacity: 0;
+			}
+			25% {
+				opacity: 0;
+			}	
+			to 	{
+				opacity: 1;
+			}
+		}
+		@-moz-keyframes contentappear{
+			from {
+				-moz-transform: scale(0);
+				opacity: 0;
+			}
+			50% {
+				-moz-transform:  scale(0.5);
+				opacity: 0;
+			}
+			to {
+				-moz-transform: scale(1);
+				opacity: 1;
+			}
+		}
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		/*################ Sliding and appearing animation for the 404 page. Works in webkit browsers and mozilla firefox.*/
+		html{
+			background: url(images/404/background-3.png) no-repeat center center fixed;
+			/*Image for the full size image background. If you want to have a color as a background, just remove the complete html{} style and uncomment the last line in the body{}*/
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			/*CSS3 for the fullscreen image background*/
+		}
+		body{
+			font-family: 'Helvetica Neue';
+			width: auto;
+			margin: 0 auto 50px auto;
+		/*	background: #C9D0F5 /*373A4D*!/;*/
+		}
+		p.error {
+			color: #000;
+			text-shadow: #fff 0 1px 0;
+			text-align:center;
+			font:700 15em helvetica neue;
+			-webkit-animation: 2s headline_appear_animation;
+			-moz-animation: 2s headline_appear_animation;					
+		}
+		.content {
+			margin: auto;
+			padding: 30px 40px 40px 30px;
+			width: 570px;
+
+			color: #fff;
+			-webkit-animation: 2s contentappear;
+			-moz-animation: 2s contentappear;
+			background-image: -moz-linear-gradient(top, rgba(85, 85, 85, 0.7), rgba(0,0,0, 1));
+			background-image: -o-linear-gradient(top, rgba(85, 85, 85, 0.7), rgba(0,0,0, 1));
+			background-image: -webkit-linear-gradient(top, rgba(85, 85, 85, 0.7), rgba(0,0,0,1));
+			background-image: linear-gradient(top, rgba(85, 85, 85, 0.7), rgba(0,0,0, 1));
+			border: 1px solid #000;
+			box-shadow: inset 0px 1px rgba(255, 255, 255, 0.4),
+						0 3px 8px #000000;
+			border-radius: 6px;
+			
+			font: 16px;
+			line-height: 25px;
+			font-weight: 300;
+			text-shadow: #000 0 1px 0;
+		}
+		.content h2{
+			text-transform: uppercase;
+			text-align: center;
+			padding-bottom: 20px;
+		}			
+	</style>
+	</head>
+	<body>
+		<p class="error">404</p>
+		<div class="content">
+			<h2>page coulnd't be found</h2>
+			<p class="text">
+				Oooooops… it looks like the page you were looking for does not exist anymore or is temporarily unavailable. You might want to search our website or browse our website. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+			</p>
+		</div>
+		
+	</body>
+</html>

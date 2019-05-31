@@ -1,0 +1,42 @@
+// 其他工具方法
+export default CookieUtil = {
+    get(name){
+        var cookieName = encodeURIComponent(name) + "=",
+            cookieStart = document.cookie.indexOf(cookieName),
+            cookieValue = null;
+        if(cookieStart > -1){
+            var cookieEnd = document.cookie.indexOf(";",cookieStart);
+            if(cookieEnd == -1){
+                cookieEnd = document.cookie.length;
+            }
+            cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length,cookieEnd));
+        }
+        return cookieValue;
+    },
+    set(name,value,expires,path,domain,secure){
+        var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value),
+            date;
+        if(expires){
+            if(typeof expires == 'number'){
+                date = new Date();
+                date.setTime(date.getTime() + (expires * 24 * 60 * 60 * 1000));
+            }else{
+                date = expires;
+            }
+            cookieText += "; expires=" + date.toUTCString();
+        }
+        if(path){
+            cookieText += "; path=" + path;
+        }
+        if(domain){
+            cookieText += "; domain=" + domain;
+        }
+        if(secure){
+            cookieText += "; secure";
+        }
+        document.cookie = cookieText;
+    },
+    unset(name,path,domain,secure){
+        this.set(name,"",new Date(0),path,domain,secure);
+    }
+}
